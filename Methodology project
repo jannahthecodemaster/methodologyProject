@@ -1,0 +1,68 @@
+# Software Design Methodologies
+
+## Introduction
+
+There is no single correct way to approach a software engineering problem. Designing a product which satisfies a customer's needs while leveraging a team's skillset (and delivering on time and on budget) isn't something with a one-size-fits-all solution. There is, however, usually one option which is a better fit for a given situation than others. In this exercise we will find out about some of the different ways in which we could go about designing a system.
+
+## Design Strategies
+
+There are three principle design strategies used in software engineering:
+
+- Structured design
+- Function oriented design
+- Object oriented design
+
+None of these are compulsory when designing a product but following one will greatly aid the process. Each has its benefits and each has its drawbacks. Unlike many other aspects of software engineering they generally exist in isolation as the principles of each sit in direct opposition to each other in some scenarios.
+
+There is no scenario where one of these strategies _can't_ be used, but we may be making our lives harder by choosing one over another. Likewise the majority of programming languages can be used with any strategy, but some are better fits for one strategy than another. For example Java is an excellent choice for an object oriented design while Scala would be a better choice for a functional design. Some languages such as Python can be used effectively with either, but have to sacrifice some features to achieve that flexibility.
+
+Within each methodology there are various **design patterns** which provide further structure for us. In general though these are much more easily transferred across methodologies, although the precise implementation will vary by language. In practice the language used for a project will likely be the last thing to be chosen, determined by a combination of methodology and design pattern.
+
+## Task
+
+In this exercise you will be required to research the design strategies listed above and answer some questions about them. Your answers should be in a markdown (`.md`) file and uploaded to GitHub, then the link submitted using the lab submission form. There is no MVP/extension split for this task - you should attempt to answer every question. You can collaborate with others in the cohort on the research part of the task but everyone should submit their own answers.
+
+
+1. What do we mean by **coupling** and **cohesion** when discussing structured design?
+    - **coupling** refers to the interdependency between components when designing and creating a software system. Low cohesion is desirable becuase it means that flaws within individual components are less likely to cause the entire malfunction of the code. Thus with low coupling it is possbile to modify and experiement with different components with greater confidence.
+    - **cohesion** refers to the interconnectivity of components in the sense that they flow together and work towards solving a common problem or satisfying an overarching function. This is desirable, as you do not want indidivual components carrying out their own irrelevant functions because this can overcomplicate and confuse the aim and direction of the software system as it is being created. High cohesion also means that it is easier to adapt and add on functionality over time because the overall function is understood well at each stage. This in turn means that one can undo modifications more easily by looking back at each stage and seeing where the code became messy/lost sight of the intended function.
+
+2. What is the difference between **top-down** and **bottom-up** design? Which best describes a function oriented design?
+- **top-down** design is the approach which breaks down a large problem into smaller subproblems over and over until each function is broken down into its simplest form. Here you understand the task within its broader context before refining and working on the smaller details.
+- **bottom-up** design is the opposite. This means that smaller individual components are created first and then pieced together slowly to build up the bigger project with the highest funcitonality. In this way smaller components can be tested first on their own before they are integrated with others for higher functionality. 
+- **function-oriented** design aligns more closely with the top-down approach as it starts with a high level description of what the program does, i.e. which function it is set out to achieve. Then based on this definition the modules are then created via a process of stepwise refinement down to the statement level of the programming language.
+
+3. In which design methodology would a **class diagram** be most useful?
+- A **class diagram** is most useful in Object-Oriented Design. They are used to visually represent the classes, their properties and methods, and the relationship between the objects of the program via the use of arrows. Through different symbols and labels, class diagrams can demonstrate key concepts of Object-Oriented Programming such as encapsulation, inheritance, and polymorphism.
+
+4. What are the **four pillars of object oriented programming**? Give a single-sentence description of each.
+- **Encapsulation:** The principle of encapsulation involves bundling data (attributes) and the methods (functions) that operate on that data within a single unit called a class, ensuring that the internal workings of an object are hidden from external access - promoting data integrity and security.
+
+- **Inheritance:** Inheritance enables a class (subclass/derived class) to inherit the properties and behaviors of another class (superclass/base class), which promotes code reuse and supports the creation of a hierarchical class structure, where common attributes and methods are defined in the base class and inherited by the derived classes.
+
+- **Polymorphism:** Polymorphism allows objects of different classes to be treated as objects of a common superclass, enabling a single interface (method or operator) to operate on different data types or objects and providing flexibility and extensibility in code design.
+
+-**Abstraction:** Abstraction involves simplifying the complexities in code by modeling classes at an appropriate level of detail while hiding unnecessary implementation details. It focuses on defining essential characteristics and behaviors relevant to the system's requirements, thus making the code more manageable and understandable.
+
+5. What is the **strategy pattern**? How would its implementation differ between a functional and object oriented system?
+- The **strategy pattern** is a behavioural design pattern which enables the client code to choose from a family of algorithms or strategies at runtime which allows for changed behaviour and functionality without also having to change the structure of the code. 
+
+In a **functional system** this would be implemented by passing different function pointers/closures to the code which enables it to choose between various algorithms at run time.
+
+In an **object-oriented program**, it would be implemented using inheritance and interfaces. The different concrete classes which would implement a certain interfact would be representative of various strategies.
+
+6. Imagine your is creating a new online payment system. In order to gain maximum market share it can't be tied to a particular sector - it needs to work just as well when ordering a takeaway as when buying a new coat. Which design methodology would you suggest following? Give some justification for your decision.
+
+- For creating an online payment system that needs to be versatile and work well across various sectors, **Object-Oriented Design** would be the most suitable methodology.
+
+Justification:
+
+Modularity and Reusability: Object-Oriented Design promotes modularity through encapsulation, allowing individual components (classes) to be developed and tested independently. This facilitates code reuse and easier maintenance, which is crucial for a complex and large-scale system like an online payment platform.
+
+Flexibility and Extensibility: OOD's polymorphism and inheritance features enable the system to accommodate new features or adapt to different payment scenarios without affecting the existing codebase. This level of flexibility is essential to support diverse payment methods, currencies, and user interfaces across different sectors.
+
+Security and Encapsulation: Encapsulation in OOD ensures that sensitive payment data is protected and only accessible through well-defined interfaces. This helps maintain the security and integrity of the payment system, which is of utmost importance when dealing with financial transactions.
+
+Clear Modeling with Class Diagrams: Class diagrams provide a visual representation of the system's structure, relationships, and interactions between objects. This clarity is beneficial for understanding the system's architecture, making it easier for developers to collaborate and maintain the system in the long run.
+
+By following Object-Oriented Design, the development team can create a robust, adaptable, and secure online payment system capable of serving various sectors while maintaining code maintainability and reusability.
